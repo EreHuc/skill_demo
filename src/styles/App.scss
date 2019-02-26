@@ -6,16 +6,33 @@
   background: $light-grey;
   color: $black-blue;
 
+  > div.nav {
+    padding: 20px 10px;
+  }
+
+  .burger-menu {
+    fill: $white;
+    cursor: pointer;
+  }
+
   nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -15%;
     width: 15%;
     max-height: 100vh;
     background: $black;
     color: $white;
-    padding: 20px 0;
+    padding: 20px 10px;
+    z-index: 2;
+
+    &.active {
+      left: 0;
+    }
   }
 
   main {
-    width: 85%;
     max-height: 100vh;
     padding: 60px 10px;
     overflow: scroll;

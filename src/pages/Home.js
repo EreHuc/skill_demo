@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/home.scss';
-import me from '../assets/moi.jpg';
+import me from '../assets/avataaars.svg';
 import github from '../assets/github.png';
+import Category from '../components/Category';
+import experiences from '../assets/experiences';
 
 const Home = () => (
   <div className="home">
@@ -10,7 +12,7 @@ const Home = () => (
         <img src={me} alt="EreHuc" height="200" />
       </div>
 
-      <div className="me-info">
+      <div className="me-header">
         <span className="upper">
           <h1>EreHuc</h1>
         </span>
@@ -25,44 +27,26 @@ const Home = () => (
       </div>
     </div>
 
-    <div className="my-life">
-      <h2>Lorem ipsum dolor</h2>
+    <div className="me-info">
+      <h2>About me</h2>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores assumenda beatae blanditiis,
-        commodi corporis deserunt dolores dolorum explicabo iure laborum laudantium numquam, perferendis sed unde.
-        Distinctio est incidunt natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut beatae
-        exercitationem explicabo ipsa laborum, odit pariatur recusandae soluta vero! Atque aut culpa facilis, incidunt
-        nulla repellendus sapiente totam vel.
+      <p className="about-me">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum ducimus error harum minus mollitia qui
+        quod quos suscipit tempora. Accusantium ea eveniet laboriosam modi, molestias nihil vel vitae? Eligendi! Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Asperiores distinctio ducimus itaque maiores molestiae nemo
+        non qui quis quod repellendus similique, soluta ullam. Atque eius harum laborum laudantium rem similique.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores assumenda beatae blanditiis,
-        commodi corporis deserunt dolores dolorum explicabo iure laborum laudantium numquam, perferendis sed unde.
-        Distinctio est incidunt natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut beatae
-        exercitationem explicabo ipsa laborum, odit pariatur recusandae soluta vero! Atque aut culpa facilis, incidunt
-        nulla repellendus sapiente totam vel.
+
+      <p className="about-me">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, animi, aperiam blanditiis delectus
+        distinctio, eligendi fugit hic id illo iusto quia recusandae rerum sed sunt tempora tempore unde veritatis
+        voluptatibus.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores assumenda beatae blanditiis,
-        commodi corporis deserunt dolores dolorum explicabo iure laborum laudantium numquam, perferendis sed unde.
-        Distinctio est incidunt natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut beatae
-        exercitationem explicabo ipsa laborum, odit pariatur recusandae soluta vero! Atque aut culpa facilis, incidunt
-        nulla repellendus sapiente totam vel.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores assumenda beatae blanditiis,
-        commodi corporis deserunt dolores dolorum explicabo iure laborum laudantium numquam, perferendis sed unde.
-        Distinctio est incidunt natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut beatae
-        exercitationem explicabo ipsa laborum, odit pariatur recusandae soluta vero! Atque aut culpa facilis, incidunt
-        nulla repellendus sapiente totam vel.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores assumenda beatae blanditiis,
-        commodi corporis deserunt dolores dolorum explicabo iure laborum laudantium numquam, perferendis sed unde.
-        Distinctio est incidunt natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut beatae
-        exercitationem explicabo ipsa laborum, odit pariatur recusandae soluta vero! Atque aut culpa facilis, incidunt
-        nulla repellendus sapiente totam vel.
-      </p>
+
+      <h2>Experiences</h2>
+      {experiences.map((experience) => (
+        <Category data={experience} />
+      ))}
     </div>
   </div>
 );
