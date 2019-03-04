@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  height: 100vh;
+  background: var(--primary-light);
+  color: var(--dark-text);
+
+  > div.nav {
+    padding: 20px 10px;
+  }
+
+  main {
+    max-height: 100vh;
+    padding: 60px 10px;
+    overflow: scroll;
+  }
+}

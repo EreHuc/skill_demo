@@ -1,0 +1,11 @@
+@import 'toggle';
+
+@mixin themify($theme, $colors) {
+  html[theme=#{$theme}] {
+    @each $colorName, $colorValue in $colors {
+      --#{$colorName}: #{$colorValue}
+    }
+  }
+
+  @include toggle($theme, $colors);
+}

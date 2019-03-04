@@ -9,8 +9,8 @@ const Category = ({ data, text }) => (
     <div className="info">
       <h3>{data.title}</h3>
 
-      {data.text.map((text) => (
-        <p>{text}</p>
+      {data.text.map((text, index) => (
+        <p key={index}>{text}</p>
       ))}
     </div>
   </>

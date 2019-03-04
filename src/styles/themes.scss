@@ -1,0 +1,28 @@
+@import 'variables';
+
+$themes: (
+        'light': (
+                primary-light: $light-grey,
+                primary: $grey,
+                primary-dark: $dark-grey,
+                secondary-light: $light-black,
+                secondary: $black,
+                secondary-dark: $dark-black,
+                light-text: $light-grey,
+                dark-text: $black-blue,
+                red: $red,
+                light-red: $light-red
+        ),
+        'dark': (
+                primary-light: $light-black,
+                primary: $black,
+                primary-dark: $dark-black,
+                secondary-light: $light-grey,
+                secondary: $light-grey,
+                secondary-dark: $dark-grey,
+                light-text: $black-blue,
+                dark-text: $light-grey,
+                red: $red,
+                light-red: $light-red
+        )
+) !default;
