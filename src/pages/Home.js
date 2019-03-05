@@ -8,8 +8,12 @@ import Category from '../components/Category';
 import experiences from '../data/experiences';
 import myStore, { darkThemeAction, lightThemeAction, toggleThemeAction } from '../store';
 import '../styles/home.scss';
+
+// NASA_API_KEY=SX8ujRu0qvwbMoWpr5APv34yR9xbJfdne8wYOTNy
+
 const Home = () => {
-  const [isDarkTheme, setTheme] = useState(false);
+  const state = myStore.getState();
+  const [isDarkTheme, setTheme] = useState(state.isDarkTheme);
 
   useEffect(() => {
     myStore.subscribe([toggleThemeAction, darkThemeAction, lightThemeAction], ({ state }) => {

@@ -1,5 +1,8 @@
 @mixin toggle($theme, $colors) {
   .toggle.#{$theme} {
+    width: 38px;
+    height: 20px;
+
     input[type="checkbox"] {
       display: none;
 

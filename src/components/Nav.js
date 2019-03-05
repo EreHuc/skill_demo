@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Burger from './Burger';
 import Toggle from './Toggle';
-import myStore, { darkThemeAction, lightThemeAction } from '../store';
+import Burger from './Burger';
+import BurgerMenu from './BurgerMenu';
+import myStore, { darkThemeAction, lightThemeAction, toggleThemeAction } from '../store';
 import Routes from '../data/routes';
 import '../styles/nav.scss';
-import { closeNavAction, openNavAction, toggleNavAction, toggleThemeAction } from '../store/actions';
+import { closeNavAction, openNavAction, toggleNavAction } from '../store/actions';
 
 const Nav = () => {
-  const [isNavActive, toggleNavState] = useState(false);
-  const [isDarkTheme, toggleTheme] = useState(false);
+  const state = myStore.getState();
+  const [isNavActive, toggleNavState] = useState(state.isNavOpen);
+  const [isDarkTheme, toggleTheme] = useState(state.isDarkTheme);
 
   const onChange = () => {
     myStore.dispatch({ type: toggleThemeAction });
@@ -22,8 +24,6 @@ const Nav = () => {
 
     const themeId = myStore.subscribe([toggleThemeAction, darkThemeAction, lightThemeAction], ({ state }) => {
       toggleTheme(state.isDarkTheme);
-
-      myStore.dispatch({ type: closeNavAction });
     });
 
     return function cleanup() {
@@ -33,11 +33,10 @@ const Nav = () => {
   }, []);
 
   return (
-    <>
-      <Burger />
-      <nav className={isNavActive ? 'active' : ''}>
+    <nav>
+      <BurgerMenu />
+      <div className={`nav ${isNavActive ? 'active' : ''}`}>
         <Burger />
-        <Toggle id="darkTheme" onChange={onChange} theme={isDarkTheme ? 'dark' : 'light'} />
         <ul>
           {Object.entries(Routes).map(([path, experience], index) =>
             path === '/' ? (
@@ -51,8 +50,12 @@ const Nav = () => {
             ),
           )}
         </ul>
-      </nav>
-    </>
+        <div className="dark-theme">
+          <span>{isDarkTheme ? 'Disable' : 'Enable'} dark theme :</span>
+          <Toggle id="darkTheme" onChange={onChange} theme={isDarkTheme ? 'dark' : 'light'} checked={isDarkTheme} />
+        </div>
+      </div>
+    </nav>
   );
 };
 

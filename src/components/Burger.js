@@ -7,11 +7,8 @@ const Burger = () => {
   const clickHandler = () => {
     myStore.dispatch({ type: toggleNavAction });
   };
-  return (
-    <div className="burger-menu">
-      <BurgerIcon className="burger-icon" onClick={clickHandler} />
-    </div>
-  );
+
+  return <BurgerIcon className="burger-icon" onClick={clickHandler} />;
 };
 
 export default Burger;

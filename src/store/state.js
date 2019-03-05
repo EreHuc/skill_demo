@@ -1,6 +1,6 @@
 const state = {
   isNavOpen: false,
-  isDarkTheme: false,
+  isDarkTheme: true,
 };
 
 export default state;

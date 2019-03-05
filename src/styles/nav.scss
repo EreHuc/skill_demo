@@ -1,25 +1,25 @@
-nav {
+div.nav {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -15%;
-  width: 15%;
+  left: -15vw;
+  width: 15vw;
   max-height: 100vh;
   background: var(--secondary);
-  color: var(--light-text);
+  color: var(--primary-text);
   padding: 60px 10px;
   z-index: 2;
-  transition: left cubic-bezier(.71, .01, 0, .99) 200ms;
+  transition: left cubic-bezier(.71, .01, 0, .99) 300ms;
 
   &.active {
     left: 0;
   }
 
-  .burger-menu {
+  .burger-icon {
     position: absolute;
-    top: 0;
-    left: 0;
-    fill: var(--light-text);
+    top: 10px;
+    left: 10px;
+    fill: var(--primary-text);
   }
 
   ul {
@@ -47,11 +47,21 @@ nav {
     }
   }
 
-  .toggle {
+  .dark-theme {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     position: absolute;
-    top: 0;
-    padding: 16px 10px 0 0;
-    right: 40px;
+    bottom: 0;
+    left: 0;
+    padding: 10px 20px;
+    height: 40px;
+    width: 100%;
+    font-size: .6em;
+
+    .toggle {
+      transform: scale(0.8);
+    }
   }
 }
 

@@ -1,14 +1,14 @@
 .App {
   display: flex;
-  height: 100vh;
   background: var(--primary-light);
-  color: var(--dark-text);
+  color: var(--secondary-text);
 
-  > div.nav {
-    padding: 20px 10px;
+  nav {
+    grid-area: nav;
   }
 
   main {
+    grid-area: main;
     max-height: 100vh;
     padding: 60px 10px;
     overflow: scroll;
