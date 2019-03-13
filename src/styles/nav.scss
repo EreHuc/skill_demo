@@ -1,66 +1,202 @@
-div.nav {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -15vw;
-  width: 15vw;
-  max-height: 100vh;
-  background: var(--secondary);
-  color: var(--primary-text);
-  padding: 60px 10px;
-  z-index: 2;
-  transition: left cubic-bezier(.71, .01, 0, .99) 300ms;
+@import "variables";
 
-  &.active {
-    left: 0;
+nav {
+  width: 100%;
+  height: 50px;
+  padding: 2px 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+
+  .burger-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .burger-icon {
+      height: 24px;
+    }
+
+    .dark-theme {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .toggle {
+        margin: 0 5px;
+        transform: scale(0.7);
+      }
+    }
   }
 
-  .burger-icon {
+  div.nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    fill: var(--primary-text);
-  }
+    top: -50px;
+    right: 0;
+    left: 0;
+    padding: 2px 10px;
+    background: var(--secondary);
+    color: var(--primary-text);
+    z-index: 2;
+    transition-property: left, top;
+    transition-timing-function: cubic-bezier(.71, .01, 0, .99);
+    transition-duration: 300ms;
 
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
+    &.active {
+      top: 0;
+    }
 
-    li {
-      margin: 5px 0;
-      padding: 5px 0;
+    .burger-icon {
+      height: 24px;
+      fill: var(--primary-text);
+    }
 
-      a, a:active, a:hover, a:visited, a:focus {
-        color: inherit;
-        text-decoration: none;
+    ul {
+      display: flex;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: center;
+      align-items: center;
+      justify-content: space-around;
+
+
+      li {
+        a, a:active, a:hover, a:visited, a:focus {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      li:first-child {
+        margin-top: 0;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
       }
     }
 
-    li:first-child {
-      margin-top: 0;
-    }
+    .dark-theme {
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 10px 20px;
+      height: 40px;
+      width: 100%;
+      font-size: .6em;
 
-    li:last-child {
-      margin-bottom: 0;
+      .toggle {
+        transform: scale(0.8);
+      }
     }
   }
+}
 
-  .dark-theme {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px 20px;
-    height: 40px;
-    width: 100%;
-    font-size: .6em;
 
-    .toggle {
-      transform: scale(0.8);
+@media screen and (min-width: $media-large) {
+  nav {
+    padding: 0;
+    display: block;
+    height: 100vh;
+    width: auto;
+
+    .burger-menu {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      height: 100%;
+      padding: 10px;
+
+      .toggle {
+        margin: 20px 0;
+      }
+
+      .burger-icon {
+        height: 32px;
+      }
+
+      .toggle {
+        display: none;
+      }
+    }
+
+    div.nav {
+      top: 0;
+      bottom: 0;
+      left: -15vw;
+      width: 15vw;
+      height: 100%;
+      max-height: 100vh;
+      padding: 60px 10px;
+
+      &.active {
+        left: 0;
+      }
+
+      .burger-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        margin: 0;
+        height: 32px;
+      }
+
+      ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+
+        li {
+          margin: 5px 0;
+          padding: 5px 0;
+
+          a, a:active, a:hover, a:visited, a:focus {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+
+        li:first-child {
+          margin-top: 0;
+        }
+
+        li:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .dark-theme {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 20px;
+        height: 40px;
+        width: 100%;
+        font-size: .6em;
+
+        .toggle {
+          transform: scale(0.8);
+        }
+      }
     }
   }
 }

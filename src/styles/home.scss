@@ -1,16 +1,19 @@
+@import "variables";
+
+
 .me {
-  display: flex;
+  display: grid;
+  grid-template-areas: 'name' 'icon' 'job' 'git';
+  text-align: center;
   position: relative;
 
   &:after {
     content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
     height: 2px;
     background: var(--red);
     align-self: center;
     z-index: 0;
+    grid-area: icon;
   }
 
   &-icon {
@@ -24,18 +27,71 @@
     border: 1px solid var(--secondary-text);
     flex-shrink: 0;
     z-index: 1;
+    grid-area: icon;
+    justify-self: center;
   }
 
-  &-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 40px;
-    z-index: 1;
+  &-name {
+    grid-area: name;
+  }
 
-    > span.upper {
-      margin-top: -40px;
+  &-job {
+    grid-area: job;
+  }
+
+  &-git {
+    grid-area: git;
+  }
+
+  &-info {
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: $media-small) {
+  .me-icon {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (min-width: $media-medium) {
+  &-icon {
+    transform: unset;
+  }
+}
+
+@media screen and (min-width: $media-large) {
+  .me {
+    grid-template-areas: 'icon name job git' 'icon blank blank blank';
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    text-align: left;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      grid-area: unset;
+    }
+
+    &-icon {
+      justify-self: unset;
+    }
+
+    &-info {
+      text-align: left;
+    }
+
+    > .upper {
+      align-self: flex-end;
+
+      h1 {
+        margin: 0;
+      }
     }
   }
 }
+
+

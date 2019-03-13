@@ -2,6 +2,7 @@
   .toggle.#{$theme} {
     width: 38px;
     height: 20px;
+    display: inline-block;
 
     input[type="checkbox"] {
       display: none;

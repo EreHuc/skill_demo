@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Main from './components/Main';
 import Nav from './components/Nav';
-import Footer from './components/Footer';
 import myStore from './store';
 import { darkThemeAction, lightThemeAction, toggleThemeAction } from './store';
 import './styles/app.scss';
@@ -21,7 +20,6 @@ const App = () => {
     <div className="App">
       <Nav />
       <Main />
-      <Footer />
     </div>
   );
 };

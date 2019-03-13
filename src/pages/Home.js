@@ -28,19 +28,17 @@ const Home = () => {
           <img src={isDarkTheme ? meDark : me} alt="EreHuc" height="200" />
         </div>
 
-        <div className="me-header">
-          <span className="upper">
-            <h1>EreHuc</h1>
-          </span>
-          <span className="upper">
-            <h1>FrontEnd Developer</h1>
-          </span>
-          <span className="upper">
-            <a href="https://github.com/EreHuc" className="git">
-              <img src={isDarkTheme ? githubLight : github} alt="github logo" height="32" />
-            </a>
-          </span>
-        </div>
+        <span className="me-name upper">
+          <h1>EreHuc</h1>
+        </span>
+        <span className="me-job upper">
+          <h1>FrontEnd Developer</h1>
+        </span>
+        <span className="me-git upper">
+          <a href="https://github.com/EreHuc" className="git">
+            <img src={isDarkTheme ? githubLight : github} alt="github logo" height="32" />
+          </a>
+        </span>
       </div>
 
       <div className="me-info">

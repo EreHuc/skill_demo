@@ -1,16 +1,39 @@
+@import "variables";
+
 .App {
   display: flex;
   background: var(--primary-light);
   color: var(--secondary-text);
+  flex-direction: column;
+  font-size: 14px;
+  transition: background ease-in-out 200ms;
 
-  nav {
-    grid-area: nav;
+  h2 {
+    text-decoration: underline;
   }
 
   main {
-    grid-area: main;
-    max-height: 100vh;
-    padding: 60px 10px;
+    max-height: calc(100vh - 50px);
+    padding: 10px 5px;
     overflow: scroll;
   }
 }
+
+@media screen and (min-width: $media-medium) {
+  .App main {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: $media-large) {
+  .App {
+    flex-direction: row;
+    font-size: 16px;
+
+    main {
+      max-height: 100vh;
+      padding: 60px 10px;
+    }
+  }
+}
+

@@ -17,6 +17,10 @@ const Nav = () => {
     myStore.dispatch({ type: toggleThemeAction });
   };
 
+  const closeNavBar = () => {
+    myStore.dispatch({ type: closeNavAction });
+  };
+
   useEffect(() => {
     const navId = myStore.subscribe([toggleNavAction, openNavAction, closeNavAction], ({ state }) => {
       toggleNavState(state.isNavOpen);
@@ -34,18 +38,22 @@ const Nav = () => {
 
   return (
     <nav>
-      <BurgerMenu />
+      <BurgerMenu toggleOnChange={onChange} isDarkTheme={isDarkTheme} />
       <div className={`nav ${isNavActive ? 'active' : ''}`}>
         <Burger />
         <ul>
           {Object.entries(Routes).map(([path, experience], index) =>
             path === '/' ? (
               <li key={index}>
-                <Link to={path}>Home</Link>
+                <Link to={path} onClick={closeNavBar}>
+                  Home
+                </Link>
               </li>
             ) : (
               <li key={index}>
-                <Link to={path}>{experience.title}</Link>
+                <Link to={path} onClick={closeNavBar}>
+                  {experience.title}
+                </Link>
               </li>
             ),
           )}

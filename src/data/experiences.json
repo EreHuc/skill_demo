@@ -36,5 +36,21 @@
         ]
       }
     ]
+  },
+  {
+    "id": "other",
+    "title": "Other project",
+    "text": [
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum ducimus error harum minus mollitia qui quod quos suscipit tempora. Accusantium ea eveniet laboriosam modi, molestias nihil vel vitae? Eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores distinctio ducimus itaque maiores molestiae nemo non qui quis quod repellendus similique, soluta ullam. Atque eius harum laborum laudantium rem similique.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum ducimus error harum minus mollitia qui quod quos suscipit tempora. Accusantium ea eveniet laboriosam modi, molestias nihil vel vitae? Eligendi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores distinctio ducimus itaque maiores molestiae nemo non qui quis quod repellendus similique, soluta ullam. Atque eius harum laborum laudantium rem similique."
+    ],
+    "details": [
+      {
+        "id": "wenk",
+        "title": "Wenk",
+        "company": "Ludum Dare 43",
+        "backgroundImage": "/LD.png"
+      }
+    ]
   }
 ]
