@@ -1,10 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { HashRouter } from 'react-router-dom';
+import './styles/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import myStore from './store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const render = () =>
+  ReactDOM.render(
+    <HashRouter>
+      <App />
+    </HashRouter>,
+    document.getElementById('root'),
+  );
+
+myStore.subscribe(render);
+
+render();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
