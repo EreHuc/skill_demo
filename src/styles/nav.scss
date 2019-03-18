@@ -8,6 +8,7 @@ nav {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: space-around;
+  z-index: 2;
 
   .burger-menu {
     width: 100%;

@@ -32,7 +32,7 @@ const Home = () => {
           <h1>EreHuc</h1>
         </span>
         <span className="me-job upper">
-          <h1>FrontEnd Developer</h1>
+          <h1>Web Developer</h1>
         </span>
         <span className="me-git upper">
           <a href="https://github.com/EreHuc" className="git">
@@ -45,18 +45,32 @@ const Home = () => {
         <h2>About me</h2>
 
         <p className="about-me">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolorum ducimus error harum minus mollitia qui
-          quod quos suscipit tempora. Accusantium ea eveniet laboriosam modi, molestias nihil vel vitae? Eligendi! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Asperiores distinctio ducimus itaque maiores molestiae
-          nemo non qui quis quod repellendus similique, soluta ullam. Atque eius harum laborum laudantium rem similique.
+          Hi ! I'm Romain «EreHuc» HUC. I'm french web developer living in Paris, I like space 🚀, programming 💻 and
+          conquer the world ( in{' '}
+          <a href="https://eu4.paradoxwikis.com/Europa_Universalis_4_Wiki" target="_blank">
+            EU4
+          </a>{' '}
+          🎮 :) )
         </p>
+
+        <p className="about-me">So what's my knowledge ?</p>
+
+        <ul>
+          <li>
+            Programming:
+            <ul>
+              <li>Front-End: HTML, CSS, Javascript (vanilla, VueJs, ReactJS, MeteorJS)</li>
+              <li>Back-End: NodeJS and a bit of Go</li>
+            </ul>
+          </li>
+          <li>Databases: MongoDB</li>
+          <li>VCS: git</li>
+          <li>IDE/Text Editor: Idea Intellij, vim</li>
+        </ul>
 
         <p className="about-me">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, animi, aperiam blanditiis delectus
-          distinctio, eligendi fugit hic id illo iusto quia recusandae rerum sed sunt tempora tempore unde veritatis
-          voluptatibus.
+          You wonder what's my greatest skill ? Knowing that : `["👨", "‍", "🚀"].join('') === "👨‍🚀"`
         </p>
-
         <h2>Experiences</h2>
         {experiences.map((experience, index) => (
           <Category data={experience} key={index} />

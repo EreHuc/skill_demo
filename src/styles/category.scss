@@ -22,24 +22,25 @@
 }
 
 @media screen and (min-width: $media-large) {
-  .banner {
-    height: 200px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0 100%);
+  .category {
+    .banner {
+      height: 200px;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0 100%);
 
-    img {
-      padding: 5px;
-      max-width: 15%;
-      max-height: unset;
+      img {
+        padding: 5px;
+        max-width: 15%;
+        max-height: unset;
+      }
+    }
+    .info {
+      width: 100%;
+      min-height: 200px;
+      margin-top: -40px;
+      padding: 40px 10px 10px 10px;
+      margin-bottom: 40px;
+      box-sizing: border-box;
     }
   }
-  .info {
-    width: 100%;
-    min-height: 200px;
-    margin-top: -40px;
-    padding: 40px 10px 10px 10px;
-    margin-bottom: 40px;
-    box-sizing: border-box;
-  }
-
 }
 

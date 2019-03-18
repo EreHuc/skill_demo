@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/category.scss';
 
-const Category = ({ data, text }) => (
+const Category = ({ data }) => (
   <div className={`category ${data.id}`}>
     <h3>{data.title}</h3>
     {data.backgroundImage ? (

@@ -39,7 +39,7 @@ const Nav = () => {
   return (
     <nav>
       <BurgerMenu toggleOnChange={onChange} isDarkTheme={isDarkTheme} />
-      <div className={`nav ${isNavActive ? 'active' : ''}`}>
+      <div className={`nav${isNavActive ? ' active' : ''}`}>
         <Burger />
         <ul>
           {Object.entries(Routes).map(([path, experience], index) =>
